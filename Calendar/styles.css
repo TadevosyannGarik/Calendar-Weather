@@ -1,0 +1,260 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  color: white;
+}
+
+@import url('https://fonts.googleapis.com/css?family=Source+Code+Pro:200');
+
+body {
+  background-image: url('https://luxe.bg/wp-content/uploads/2021/10/0-36.jpg');
+  background-size: cover;
+  -webkit-animation: slidein 90s;
+  animation: slidein 90s;
+
+  -webkit-animation-fill-mode: forwards;
+  animation-fill-mode: forwards;
+
+  -webkit-animation-iteration-count: infinite;
+  animation-iteration-count: infinite;
+
+  -webkit-animation-direction: alternate;
+  animation-direction: alternate;
+}
+
+@-webkit-keyframes slidein {
+  from {
+    background-position: top;
+    background-size: 3000px;
+  }
+
+  to {
+    background-position: -100px 0px;
+    background-size: 2750px;
+  }
+}
+
+@keyframes slidein {
+  from {
+    background-position: top;
+    background-size: 3000px;
+  }
+
+  to {
+    background-position: -100px 0px;
+    background-size: 2750px;
+  }
+}
+
+.center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  margin: auto;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  border-radius: 3px;
+}
+
+.center h1 {
+  text-align: center;
+  color: white;
+  font-family: Arial, sans-serif;
+  text-transform: uppercase;
+}
+
+.calendar-container {
+  background: #ffffff00;
+  width: 900px;
+  margin-top: -160px;
+  backdrop-filter: blur(3px);
+  box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+  border-radius: 20px;
+  display: flex;
+}
+
+.calendar-image {
+  width: 400px;
+  margin-right: 20px;
+}
+
+.calendar-image img {
+  width: 100%;
+  height: auto;
+}
+
+.calendar-body-container {
+  flex: 1;
+}
+
+.calendar-container header {
+  display: flex;
+  align-items: center;
+  padding: 25px 30px 10px;
+  justify-content: space-between;
+}
+
+header .calendar-navigation {
+  display: flex;
+}
+
+header .calendar-navigation span {
+  height: 38px;
+  width: 38px;
+  margin: 0 1px;
+  cursor: pointer;
+  text-align: center;
+  line-height: 38px;
+  border-radius: 25%;
+  user-select: none;
+  color: #f8f4f4;
+  font-size: 1.9rem;
+}
+
+.calendar-navigation span:last-child {
+  margin-right: -10px;
+}
+
+header .calendar-navigation span:hover {
+  background: #1a1919;
+}
+
+header .calendar-current-date {
+  font-weight: 500;
+  font-size: 1.45rem;
+}
+
+.calendar-body {
+  padding: 20px;
+}
+
+.calendar-body ul {
+  list-style: none;
+  flex-wrap: wrap;
+  display: flex;
+  text-align: center;
+  font-size: 18px;
+
+}
+
+.calendar-body .calendar-dates {
+  margin-bottom: 20px;
+}
+
+.calendar-body li {
+  width: calc(100% / 7);
+  font-size: 1.07rem;
+  color: #ffffff;
+}
+
+.calendar-body .calendar-weekdays li {
+  cursor: default;
+  font-weight: 500;
+  font-size: 19px;
+  color: white;
+
+}
+
+.calendar-body .calendar-dates li {
+  margin-top: 30px;
+  position: relative;
+  font-size: 19px;
+  color: rgb(255, 255, 255);
+  z-index: 1;
+  cursor: pointer;
+}
+
+.calendar-dates li.inactive {
+  color: #ffffff5d;
+}
+
+.calendar-dates li.active {
+  color: #ffffff;
+}
+
+.calendar-dates li::before {
+  position: absolute;
+  content: "";
+  z-index: -1;
+  top: 50%;
+  left: 50%;
+  width: 40px;
+  height: 40px;
+  border-radius: 25%;
+  transform: translate(-50%, -50%);
+}
+
+.calendar-dates li.active::before {
+  background: #003b51;
+  color: #000;
+}
+
+.calendar-dates li:not(.active):hover::before {
+  background: #1a1919;
+  backdrop-filter: blur(20px);
+
+}
+
+.weather-data {
+  text-align: center;
+  color: #333;
+  font-size: 1.2rem;
+  margin-top: 10px;
+}
+
+.weather-data {
+  text-align: center;
+  color: #333;
+  font-size: 1.2rem;
+  padding: 20px;
+  background-color: rgba(255, 255, 255, 0);
+  border-radius: 20px 0px 0px 20px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  max-width: 361px;
+  margin: 0 auto;
+  margin-left: -1px;
+  margin-top: -1px;
+  height: 90.5%;
+}
+
+#time {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+}
+
+#day {
+  font-size: 1.3rem;
+  margin-bottom: 10px;
+}
+
+#weather {
+  font-size: 1.1rem;
+  padding: 3px;
+  margin-bottom: 10px;
+
+}
+
+#precipitation {
+  font-size: 1.1rem;
+  padding: 3px;
+  margin-bottom: 10px;
+
+}
+
+#humidity {
+  font-size: 1.1rem;
+  padding: 3px;
+  margin-bottom: 10px;
+
+}
+
+#wind-speed {
+  font-size: 1.1rem;
+  padding: 3px;
+  margin-bottom: 10px;
+
+}
